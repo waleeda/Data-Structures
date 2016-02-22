@@ -15,6 +15,7 @@
 typedef struct __Stack{
     Element base;
     Element top;
+    struct __Stack *previous;
     int size;
    
 } _Stack;
@@ -25,7 +26,7 @@ Stack create_stack(int size);
 
 int stack_empty(Stack stack);
 
-int push(Element element, Stack stack);
+void push(Element element, Stack stack);
 
 Element pop(Stack stack);
 

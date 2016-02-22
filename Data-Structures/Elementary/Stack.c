@@ -16,7 +16,7 @@ Stack create_stack(int size){
     stk->top = stk->base;
   
     stk->size = size;
-    
+    stk->previous = NULL;
     
     return stk;
 }
@@ -24,38 +24,66 @@ Stack create_stack(int size){
 
 int stack_empty(Stack stack){
     
-    return (stack->base  == stack->top);
+    return (stack->base  == stack->top && stack->previous == NULL);
     
 }
 
-int push(Element element, Stack stack){
+void push(Element element, Stack stack){
     if (stack->top < stack->base + stack->size) {
         
         *(stack->top) = *element;
         stack->top += 1;
-        return 0;
         
-    }else
-        return -1;
+    }else{
+        Stack new;
+        new  = (Stack) malloc(sizeof(_Stack));
+        new->base = stack->base;
+        new->top = stack->top;
+        new->size = stack->size;
+        new->previous = stack->previous;
+        stack->previous = new;
+        stack->base = (Element) malloc(stack->size * sizeof(Element));
+        stack->top = stack->base +1;
+        *(stack->base) = *element;
+        
+        
+        
+    }
     
 }
 
 Element pop(Stack stack){
     
-    stack->top -= 1;
+    if(stack->top == stack->base) {
+        Stack old;
+        old = stack->previous;
+        stack->previous = old->previous;
+        free(stack->base);
+        stack->base= old->top;
+        stack->top = old->top;
+        free(old);
+    }
+    stack->size -= 1;
     return (stack->top);
     
 }
 
 Element top_element(Stack stack){
-    
+    if( stack->top == stack->base){
+        return stack->previous->top - 1;
+    }
+    else{
     return (stack->top - 1);
-    
+    }
 }
 
 void remove_stack(Stack stack){
-    
-    
-    free(stack->base);
-    free(stack);
+    Stack tmp;
+    tmp = stack->previous;
+    do {
+        tmp = stack->previous;
+        free(stack->base);
+        free(stack);
+        stack = tmp;
+    } while (stack != NULL);
 }

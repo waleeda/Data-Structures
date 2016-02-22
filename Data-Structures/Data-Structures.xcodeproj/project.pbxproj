@@ -10,6 +10,7 @@
 		F5A725181C7941A70022C45A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = F5A725171C7941A70022C45A /* main.c */; };
 		F5A725201C7942E50022C45A /* Stack.c in Sources */ = {isa = PBXBuildFile; fileRef = F5A7251E1C7942E50022C45A /* Stack.c */; };
 		F5A725231C7944090022C45A /* Element.c in Sources */ = {isa = PBXBuildFile; fileRef = F5A725211C7944090022C45A /* Element.c */; };
+		F5AF92E81C7AB30000543CA2 /* Queue.c in Sources */ = {isa = PBXBuildFile; fileRef = F5AF92E61C7AB30000543CA2 /* Queue.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		F5A7251F1C7942E50022C45A /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stack.h; path = Elementary/Stack.h; sourceTree = "<group>"; };
 		F5A725211C7944090022C45A /* Element.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Element.c; sourceTree = "<group>"; };
 		F5A725221C7944090022C45A /* Element.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Element.h; sourceTree = "<group>"; };
+		F5AF92E61C7AB30000543CA2 /* Queue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Queue.c; path = Elementary/Queue.c; sourceTree = "<group>"; };
+		F5AF92E71C7AB30000543CA2 /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Queue.h; path = Elementary/Queue.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,8 +52,7 @@
 			children = (
 				F5A725221C7944090022C45A /* Element.h */,
 				F5A725211C7944090022C45A /* Element.c */,
-				F5A7251F1C7942E50022C45A /* Stack.h */,
-				F5A7251E1C7942E50022C45A /* Stack.c */,
+				F5AF92E51C7AB2E200543CA2 /* Elementary */,
 				F5A725161C7941A70022C45A /* Data-Structures */,
 				F5A725151C7941A70022C45A /* Products */,
 			);
@@ -70,6 +72,17 @@
 				F5A725171C7941A70022C45A /* main.c */,
 			);
 			path = "Data-Structures";
+			sourceTree = "<group>";
+		};
+		F5AF92E51C7AB2E200543CA2 /* Elementary */ = {
+			isa = PBXGroup;
+			children = (
+				F5A7251F1C7942E50022C45A /* Stack.h */,
+				F5A7251E1C7942E50022C45A /* Stack.c */,
+				F5AF92E61C7AB30000543CA2 /* Queue.c */,
+				F5AF92E71C7AB30000543CA2 /* Queue.h */,
+			);
+			name = Elementary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5A725231C7944090022C45A /* Element.c in Sources */,
+				F5AF92E81C7AB30000543CA2 /* Queue.c in Sources */,
 				F5A725201C7942E50022C45A /* Stack.c in Sources */,
 				F5A725181C7941A70022C45A /* main.c in Sources */,
 			);
@@ -249,6 +263,7 @@
 				F5A7251D1C7941A70022C45A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
